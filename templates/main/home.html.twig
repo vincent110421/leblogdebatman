@@ -5,10 +5,10 @@
 {% block title %}Accueil{% endblock %}
 
 {# Remplissage du body de la page #}
-{% block body  %}
+{% block body %}
 
     {#  Grille Bootstrap  #}
-    <div class="container-fluid"></div>
+<div class="container-fluid">
 
     {# Titre h1 de la page #}
     <div class="row">
@@ -19,17 +19,22 @@
 
     {# Contenu lorem #}
     <div class="row">
-                <div class="col-12 col-md-10 mx-auto">
-            <h2 class="text-center my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cupiditate earum error ex</h2>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius harum ipsa iste iusto nostrum placeat saepe temporibus voluptatum. Dolorum eaque modi pariatur repellendus unde. Debitis doloribus reiciendis repellendus ut voluptate.</p>
-                 <div>
-            </div>
-                    {# Affichage de l'image fixe en bandeau #}
-                    <div class="row my-5 batman-cover"></div>
+        <div class="col-12 col-md-10 mx-auto">
+            <h2 class="text-center my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cupiditate
+                earum error ex</h2>
 
-                </div>
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius harum ipsa iste iusto
+                nostrum placeat saepe temporibus voluptatum. Dolorum eaque modi pariatur repellendus unde. Debitis
+                doloribus reiciendis repellendus ut voluptate.</p>
+
+
+        </div>
     </div>
-{% endblock %}
+
+    {# Affichage de l'image fixe en bandeau #}
+    <div class="row my-5 batman-cover"></div>
+
+    {% endblock %}
 
 
 
