@@ -4,10 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\NewPublicationFormType;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
@@ -74,8 +77,29 @@ class BlogController extends AbstractController
 
     #[Route('/publication/liste/', name: 'publication_list')]
 
-    public function publicationList(ManagerRegistry $doctrine): Response
+    public function publicationList(ManagerRegistry $doctrine, Request $request, PaginatorInterface $paginator): Response
     {
+
+        $requestedPage = $request->query->getInt('page', 1);
+
+        if($requestedPage < 1 ){
+            throw new NotFoundHttpException();
+        }
+
+        $em = $doctrine->getManager();
+
+        $query = $em->createQuery('SELECT a FROM App\Entity\Article a ORDER BY a.publicationDate DESC');
+
+        $articles = $paginator->paginate(
+            $query,
+            $requestedPage,
+            10
+        );
+
+        return $this->render('blog/publication_list.html.twig',[
+
+            'articles' => $articles,
+        ]);
 
         // Récupération du repository des articles
         $articleRepo = $doctrine->getRepository(Article::class);

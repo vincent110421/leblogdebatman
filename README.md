@@ -27,7 +27,7 @@ symfony console doctrine:fixtures:load
 Cette commande créera :
 * Un compte admin (email: a@a.a, password : 'Azerty123!' )
 * 10 compte utilisateurs (email aléatoire , password , 'Azerty123!' )
-* 50 articles
+* 200 articles
 
 
 ### Installation fichier front bundles (CKEditor)
