@@ -9,5 +9,5 @@ fos_ck_editor:
         general:
             language: fr
             toolbar: full
-            uiColor: "#0aa6f9"
+            uiColor: "#1A1D45"
             height: 400px
