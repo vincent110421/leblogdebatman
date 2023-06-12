@@ -28,6 +28,14 @@ Cette commande créera :
 * Un compte admin (email: a@a.a, password : 'Azerty123!' )
 * 10 compte utilisateurs (email aléatoire , password , 'Azerty123!' )
 * 50 articles
+
+
+### Installation fichier front bundles (CKEditor)
+```
+symfony console assets:install public
+```
+
+
 ### Lancer le serveur
 ```
 symfony serve
