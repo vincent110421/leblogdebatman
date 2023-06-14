@@ -6,10 +6,17 @@ liip_imagine:
         mode: lazy
 
     filter_sets:
-
+        # Filtre pour afficher les photos de profil dans les commentaires
         profil:
             quality: 75
             filters:
                 scale:
                     dim: [700, 700]
+
+        comment:
+            quality: 75
+            filters:
+                scale:
+                     dim: [100, 100]
+
 
